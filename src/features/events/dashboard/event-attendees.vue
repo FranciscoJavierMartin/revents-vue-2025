@@ -1,11 +1,15 @@
 <template>
   <div class="avatar-group -space-x-5">
-    <div v-for="i of 5" :key="i" class="avatar">
+    <div v-for="attendee of attendees" :key="attendee.id" class="avatar">
       <div class="w-12">
-        <img
-          src="https://img.daisyui.com/images/profile/demo/batperson@192.webp"
-        />
+        <img :src="attendee.photoURL" />
       </div>
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+import type { Attendee } from '@/lib/types';
+
+defineProps<{ attendees: Attendee[] }>();
+</script>
