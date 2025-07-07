@@ -2,7 +2,9 @@
   <header
     class="from-primary fixed top-0 z-50 w-full bg-gradient-to-r to-black p-3"
   >
-    <div class="mx-auto flex items-center gap-6 px-10 align-middle">
+    <div
+      class="mx-auto flex cursor-pointer items-center gap-6 px-10 align-middle"
+    >
       <a
         href="#"
         class="flex max-h-16 items-center gap-3 border-r-2 border-r-white pr-6 text-white"
@@ -11,7 +13,7 @@
       >
       <nav class="my-2 flex gap-3 text-lg text-white uppercase">
         <a>Events</a>
-        <a>Create</a>
+        <a @click="$emit('open')">Create</a>
       </nav>
       <div class="ml-auto flex gap-3 align-middle">
         <button class="btn">Login</button>
@@ -21,4 +23,6 @@
   </header>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+defineEmits<{ open: void }>();
+</script>

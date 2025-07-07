@@ -4,7 +4,7 @@
       <EventCard v-for="event of events" :key="event.id" :event />
     </div>
     <div class="w-2/5">
-      <EventForm />
+      <EventForm v-if="isFormOpen" @cancel="$emit('close')" />
     </div>
   </div>
 </template>
@@ -13,4 +13,7 @@
 import EventCard from '@/features/events/dashboard/event-card.vue';
 import EventForm from '@/features/events/form/event-form.vue';
 import { events } from '@/lib/data/sample-data';
+
+defineProps<{ isFormOpen: boolean }>();
+defineEmits<{ close: void }>();
 </script>

@@ -25,3 +25,7 @@
     </form>
   </div>
 </template>
+
+<script setup lang="ts">
+defineEmits<{ close: void }>();
+</script>
