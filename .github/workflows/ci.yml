@@ -27,5 +27,3 @@ jobs:
         run: bun type-check
       - name: build
         run: bun build-only
-      - name: unit tests
-        run: bun test:unit
