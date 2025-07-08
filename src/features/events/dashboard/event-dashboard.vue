@@ -39,14 +39,14 @@ import { onBeforeUnmount, onMounted, ref } from 'vue';
 const appEvents = ref<AppEvent[]>([]);
 
 defineProps<{ isFormOpen: boolean }>();
-const emit = defineEmits<{ close: [void] }>();
+defineEmits<{ close: [void] }>();
 
-function handleCreateEvent(eventData: AppEvent): void {
-  appEvents.value.push(eventData);
-  emit('close');
-}
+// function handleCreateEvent(eventData: AppEvent): void {
+//   appEvents.value.push(eventData);
+//   emit('close');
+// }
 
-function handleUpdateEvent(updatedEventData: AppEvent): void {}
+// function handleUpdateEvent(updatedEventData: AppEvent): void {}
 
 onMounted(() => {
   appEvents.value = events;
